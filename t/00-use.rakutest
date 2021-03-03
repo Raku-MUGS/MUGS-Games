@@ -1,0 +1,35 @@
+use v6.d;
+use Test;
+
+# Will need at least this Core version to use these game modules
+use MUGS::Core:ver<0.0.3>;
+
+use MUGS::Games;
+
+
+### GAME CLIENT AND SERVER IMPLEMENTATIONS
+
+use MUGS::Server::Genre::TurnBased;
+
+use MUGS::Server::Genre::Guessing;
+use MUGS::Server::Game::NumberGuess;
+use MUGS::Server::Game::Snowman;
+
+use MUGS::Server::Genre::IF;
+use MUGS::Server::Game::Adventure::Locations;
+use MUGS::Server::Game::Adventure::Loader;
+use MUGS::Server::Game::Adventure::CommandParser;
+use MUGS::Server::Game::Adventure;
+
+use MUGS::Client::Genre::Guessing;
+use MUGS::Client::Game::NumberGuess;
+use MUGS::Client::Game::Snowman;
+
+use MUGS::Client::Genre::IF;
+use MUGS::Client::Game::Adventure;
+
+
+pass "all modules loaded successfully";
+
+
+done-testing;
