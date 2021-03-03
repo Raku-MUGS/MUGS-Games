@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/Raku-MUGS/MUGS-Games/workflows/test/badge.svg)](https://github.com/Raku-MUGS/MUGS-Games/actions)
+
 NAME
 ====
 
