@@ -1,0 +1,42 @@
+-- Mound Entrance
+> out - Forest Clearing { blocker = Door, map = overland }
+> northeast - Northeast Passageway
+> northwest - Northwest Passageway
+> southeast - Southeast Passageway
+> southwest - Southwest Passageway
+
+Light reveals a simple circular chamber, perhaps 30 feet across, with a sloped
+ceiling that roughly mirrors the shape of the mound above.  The sloping path
+from the wooden doorway continues 10 feet further into the room, leaving the
+floor low enough to stand upright comfortably.
+
+There are four dark passageways leading northeast, northwest, southeast, and
+southwest.  Above the passage entrances are pictures of a flame, a scroll, an
+axe, and a spiral, respectively.
+
+On a small wooden table lies an old parchment which reads:
+
+    One leads to mystery,
+    One leads to pain,
+    One leads to tragedy,
+    One leads to gain.
+
+-- Northeast Passageway
+> southwest - Mound Entrance
+
+.
+
+-- Northwest Passageway
+> southeast - Mound Entrance
+
+.
+
+-- Southeast Passageway
+> northwest - Mound Entrance
+
+.
+
+-- Southwest Passageway
+> northeast - Mound Entrance
+
+.

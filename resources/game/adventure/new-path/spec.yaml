@@ -1,0 +1,8 @@
+title:          A New Path
+intro-file:     intro.txt
+item-file:      items.yaml
+map-files:
+  overland:       path.map
+  underground:    underground.map
+start-map:      overland
+start-location: Main Road

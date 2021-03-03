@@ -1,0 +1,41 @@
+-- Main Road
+> west - Road to the Duke's Castle
+> east - Village Gates
+> north - Forest Path
+
+From here it is 3 day's travel westward to the Duke's Castle, or about an hour
+eastward to the nearest village.  An unmarked path leads into the forest on the
+north side of the road.
+
+-- Road to the Duke's Castle
+> east - Main Road
+
+Westward to the Duke's castle is another adventure entirely.  Perhaps you'd
+like to head back east?
+
+-- Village Gates
+> west - Main Road
+
+A sign on the gates reads "Out to lunch, come back later".
+
+-- Forest Path
+> north - Forest Clearing
+> south - Main Road
+
+As you follow the path into the forest, you become certain that it has not been
+trodden by two-legged creatures in some time -- there are no foot or boot prints
+and the trail is nearly lost at times as branches and brush have encroached upon
+it.  There seem to be quite a few animals using it, however; hoof and paw prints
+abound.
+
+-- Forest Clearing
+> south - Forest Path
+> in - Mound Entrance { blocker = Door, map = underground }
+| Door
+
+This small, sunlit, roughly circular clearing in the forest sports soft green
+grass, wildflowers feeding quietly buzzing bees, and a low mound (perhaps 3 to 4
+feet high) near the center.  On the north side of the mound is a gently sloping
+path cut into the soil, leading to a wooden door -- clearly quite old, but also
+seeming quite sturdy.  Grass has grown onto the path and it appears that
+nothing larger than a squirrel has walked on it in ages.

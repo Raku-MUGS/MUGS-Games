@@ -1,0 +1,6 @@
+---
+name:     Door
+options:
+  fixed:  true
+  locked: true
+...
