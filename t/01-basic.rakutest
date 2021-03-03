@@ -1,6 +1,0 @@
-use Test;
-use MUGS::Games;
-
-pass "replace me";
-
-done-testing;
