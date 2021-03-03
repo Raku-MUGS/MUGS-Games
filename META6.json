@@ -6,12 +6,26 @@
   ],
   "depends": [
   ],
-  "description": "blah blah blah",
+  "description": "Free-as-in-speech game implementations for MUGS (Multi-User Gaming Services)",
   "license": "Artistic-2.0",
   "name": "MUGS::Games",
   "perl": "6.d",
   "provides": {
-    "MUGS::Games": "lib/MUGS/Games.rakumod"
+    "MUGS::Client::Game::Adventure": "lib/MUGS/Client/Game/Adventure.rakumod",
+    "MUGS::Client::Game::NumberGuess": "lib/MUGS/Client/Game/NumberGuess.rakumod",
+    "MUGS::Client::Game::Snowman": "lib/MUGS/Client/Game/Snowman.rakumod",
+    "MUGS::Client::Genre::Guessing": "lib/MUGS/Client/Genre/Guessing.rakumod",
+    "MUGS::Client::Genre::IF": "lib/MUGS/Client/Genre/IF.rakumod",
+    "MUGS::Games": "lib/MUGS/Games.rakumod",
+    "MUGS::Server::Game::Adventure": "lib/MUGS/Server/Game/Adventure.rakumod",
+    "MUGS::Server::Game::Adventure::CommandParser": "lib/MUGS/Server/Game/Adventure/CommandParser.rakumod",
+    "MUGS::Server::Game::Adventure::Loader": "lib/MUGS/Server/Game/Adventure/Loader.rakumod",
+    "MUGS::Server::Game::Adventure::Locations": "lib/MUGS/Server/Game/Adventure/Locations.rakumod",
+    "MUGS::Server::Game::NumberGuess": "lib/MUGS/Server/Game/NumberGuess.rakumod",
+    "MUGS::Server::Game::Snowman": "lib/MUGS/Server/Game/Snowman.rakumod",
+    "MUGS::Server::Genre::Guessing": "lib/MUGS/Server/Genre/Guessing.rakumod",
+    "MUGS::Server::Genre::IF": "lib/MUGS/Server/Genre/IF.rakumod",
+    "MUGS::Server::Genre::TurnBased": "lib/MUGS/Server/Genre/TurnBased.rakumod"
   },
   "resources": [
   ],
@@ -20,5 +34,5 @@
   ],
   "test-depends": [
   ],
-  "version": "0.0.1"
+  "version": "0.0.3"
 }
