@@ -26,7 +26,7 @@ genre implementations for MUGS (Multi-User Gaming Services).  Note that these
 implementations do NOT have user interfaces; they only implement abstract game
 logic, request/response protocols, and so forth.  This is sufficient for
 automated testing and implementation of game bots, but if you want to play
-them as and end user, you'll need to install the appropriate MUGS-UI-* for the
+them as an end user, you'll need to install the appropriate MUGS-UI-* for the
 user interface you prefer.
 
 This Proof-of-Concept release only includes simple turn-based guessing and
