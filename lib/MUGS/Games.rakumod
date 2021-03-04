@@ -11,11 +11,16 @@ MUGS-Games - Free-as-in-speech game implementations for MUGS (Multi-User Gaming 
 
 =head1 SYNOPSIS
 
-=begin code :lang<raku>
+  # Setting up a simple MUGS-Games development environment
+  mkdir MUGS
+  cd MUGS
+  git clone git@github.com:Raku-MUGS/MUGS-Core.git
+  git clone git@github.com:Raku-MUGS/MUGS-Games.git
+  cd MUGS-Core
+  zef install .
+  mugs-admin create-universe
+  cd ../MUGS-Games
 
-use MUGS::Games;
-
-=end code
 
 =head1 DESCRIPTION
 
