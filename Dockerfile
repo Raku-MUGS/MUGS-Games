@@ -9,3 +9,5 @@ COPY . /home/raku
 RUN zef install --deps-only . \
  && raku -c -Ilib bin/mugs-ws-server \
  && raku -c -Ilib bin/mugs-admin
+
+RUN zef install .
