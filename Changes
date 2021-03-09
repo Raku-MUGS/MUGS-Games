@@ -1,4 +1,9 @@
 Revision history for MUGS-Games
 
 {{$NEXT}}
-    - Initial version
+
+0.0.4 *WIP*
+  - Support Docker builds
+
+0.0.3 2021-03-04
+  - First public upload
