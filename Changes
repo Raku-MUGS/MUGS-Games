@@ -6,8 +6,12 @@ Revision history for MUGS-Games
   [Packaging]
   - Support Docker builds
 
+  [Bug fixes]
+  - Guessing: Rethrow error to UI if send-guess promise is broken
+
   [Games]
   - Support multi-round mode in Snowman game
+
 
 0.0.3 2021-03-04
   - First public upload
