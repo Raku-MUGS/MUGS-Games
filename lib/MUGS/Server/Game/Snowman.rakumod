@@ -9,9 +9,9 @@ class MUGS::Server::Game::Snowman is MUGS::Server::Genre::Guessing {
     has IO::Path $.wordlist     = '/usr/share/dict/words'.IO;
     has          @.words        = $!wordlist.words.grep(/^ <[a..z]>+ $/);
 
-    has UInt:D   $!max-length   = (self.config<difficulty> || 1) + 2;
+    has UInt:D   $!max-length   = max 3, self.config<max-length>;
     has UInt:D   $!min-length   = self.config<progressive> ?? 3 !! $!max-length;
-    has UInt:D   $!start-length = $!min-length;
+    has UInt:D   $!start-length = $!max-length;
     has UInt:D   $!cur-length   = $!start-length;
     has Str      $!word;
 
@@ -25,18 +25,18 @@ class MUGS::Server::Game::Snowman is MUGS::Server::Genre::Guessing {
         my @form := callsame;
 
         @form.push:
-            { field           => 'difficulty',
+            { field           => 'max-length',
               section         => 'Challenge',
-              desc            => 'Difficulty (affects word length)',
+              desc            => 'Max word length (affects difficulty)',
               type            => UInt,
-              default         => 5,
+              default         => 7,
               visible-locally => True,
             },
             { field           => 'progressive',
               section         => 'Challenge',
               desc            => 'Progressive mode (multiple rounds, changing word length)',
               type            => Bool,
-              default         => False,
+              default         => True,
               visible-locally => True,
             },
             { field           => 'penalize-loss',
@@ -66,9 +66,9 @@ class MUGS::Server::Game::Snowman is MUGS::Server::Genre::Guessing {
 
     method update-cur-length(::?CLASS:D:) {
         my $prev-round = @!round-results[*-2] // Undecided;
-        my $penalty    = self.config<penalize-loss> * ($!cur-length > $!min-length) * -1;
+        my $penalty    = self.config<penalize-loss> * ($!cur-length < $!max-length);
 
-        $!cur-length  += $prev-round == Loss ?? $penalty !! $prev-round == Win;
+        $!cur-length  += $prev-round == Loss ?? $penalty !! -($prev-round == Win);
     }
 
     method pick-new-word(::?CLASS:D:) {
@@ -88,24 +88,23 @@ class MUGS::Server::Game::Snowman is MUGS::Server::Genre::Guessing {
         my $correct = $guess ∈ $!word.comb;
         $.misses   += !$correct;
 
-        self.maybe-end-round;
+        my $round-result = self.round-result;
+        self.maybe-end-round($round-result);
 
-        hash(:$correct)
+        hash(:$correct, :$round-result)
     }
 
-    method maybe-end-round(::?CLASS:D:) {
-        if self.round-result -> $winloss {
-            @!round-results[*-1] = $winloss;
+    method maybe-end-round(::?CLASS:D: WinLoss:D $winloss) {
+        return unless $winloss;
 
-            if $!cur-length == $!max-length {
-                if $winloss == Win
-                || !self.config<progressive> {
-                    self.set-winloss($winloss);
-                }
-                else {
-                    self.start-round;
-                }
-            }
+        @!round-results[*-1] = $winloss;
+
+        if $!cur-length == $!min-length
+        && ($winloss == Win || !self.config<progressive>) {
+            self.set-winloss($winloss);
+        }
+        else {
+            self.start-round;
         }
     }
 
