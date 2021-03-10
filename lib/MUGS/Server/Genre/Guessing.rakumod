@@ -25,7 +25,7 @@ class MUGS::Server::Genre::Guessing is MUGS::Server::Genre::TurnBased {
 
             self.ensure-guess-valid($action<guess>);
 
-            X::MUGS::Request::AdHoc.new(message => "Guess has already been tried").throw
+            X::MUGS::Request::AdHoc.new(message => "Guess has already been tried.").throw
                 if $action<guess> ∈ @.tried;
         }
     }
