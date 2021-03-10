@@ -12,8 +12,14 @@ class MUGS::Client::Genre::Guessing is MUGS::Client::Game {
     method response-format()       { ... }
 
     method send-guess($guess, &on-success) {
-        self.action-promise(self.guess-action($guess), &on-success).then:
-            { await self.leave if .status == Kept && .result.data<gamestate> >= Finished }
+        self.action-promise(self.guess-action($guess), &on-success).then: {
+            if .status == Kept {
+                await self.leave if .result.data<gamestate> >= Finished
+            }
+            else {
+                .cause.rethrow
+            }
+        }
     }
 
     method guess-action($guess) {
