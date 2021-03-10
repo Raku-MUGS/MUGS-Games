@@ -12,7 +12,8 @@ class MUGS::Client::Game::Snowman is MUGS::Client::Genre::Guessing {
     method initial-state-format()  { :(UInt:D :$misses!, Str:D :$partial!,
                                        UInt:D :$length!, :@tried!, *%) }
     method response-format()       { :(UInt:D :$misses!, Str:D :$partial!,
-                                       Bool :$correct, :@tried!, *%) }
+                                       UInt:D :$length!, Bool :$correct,
+                                       :@round-results!, :@tried!, *%) }
 
     method !ensure-guesses-all-single-characters(@guesses) {
         die "List of guessed characters contains a non-string"
