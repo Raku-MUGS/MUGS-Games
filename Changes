@@ -1,8 +1,6 @@
 Revision history for MUGS-Games
 
-{{$NEXT}}
-
-0.0.4 *WIP*
+0.0.4  2021-03-10
   [Packaging]
   - Support Docker builds
 
@@ -13,5 +11,5 @@ Revision history for MUGS-Games
   - Support multi-round mode in Snowman game
 
 
-0.0.3 2021-03-04
+0.0.3  2021-03-04
   - First public upload
