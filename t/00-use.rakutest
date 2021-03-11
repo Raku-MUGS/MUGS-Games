@@ -2,7 +2,7 @@ use v6.d;
 use Test;
 
 # Will need at least this Core version to use these game modules
-use MUGS::Core:ver<0.0.3>;
+use MUGS::Core:ver<0.0.4>;
 
 use MUGS::Games;
 
