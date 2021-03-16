@@ -17,7 +17,7 @@ MUGS-Games - Free-as-in-speech game implementations for MUGS (Multi-User Gaming 
   git clone git@github.com:Raku-MUGS/MUGS-Core.git
   git clone git@github.com:Raku-MUGS/MUGS-Games.git
   cd MUGS-Core
-  zef install .
+  zef install --exclude="pq:ver<5>:from<native>" .
   mugs-admin create-universe
   cd ../MUGS-Games
 
