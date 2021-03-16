@@ -3,7 +3,8 @@ Revision history for MUGS-Games
 
 0.0.6  *WIP*
   [Bug fixes]
-  - Exclude pq from dependencies install in README SYNOPSIS
+  - Exclude pq from first dependencies install in README SYNOPSIS
+  - Install deps for this dist in README SYNOPSIS
 
 
 0.0.5  2021-03-15

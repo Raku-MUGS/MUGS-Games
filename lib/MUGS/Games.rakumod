@@ -20,6 +20,7 @@ MUGS-Games - Free-as-in-speech game implementations for MUGS (Multi-User Gaming 
   zef install --exclude="pq:ver<5>:from<native>" .
   mugs-admin create-universe
   cd ../MUGS-Games
+  zef install --deps-only .
 
 
 =head1 DESCRIPTION

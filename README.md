@@ -17,6 +17,7 @@ SYNOPSIS
     zef install --exclude="pq:ver<5>:from<native>" .
     mugs-admin create-universe
     cd ../MUGS-Games
+    zef install --deps-only .
 
 DESCRIPTION
 ===========
