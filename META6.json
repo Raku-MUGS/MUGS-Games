@@ -6,7 +6,7 @@
   "build-depends": [
   ],
   "depends": [
-    "MUGS::Core:ver<0.0.6>",
+    "MUGS::Core:ver<0.1.0>",
     "RPG::Base"
   ],
   "description": "Free-as-in-speech game implementations for MUGS (Multi-User Gaming Services)",
