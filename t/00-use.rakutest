@@ -21,6 +21,8 @@ use MUGS::Server::Game::Adventure::Loader;
 use MUGS::Server::Game::Adventure::CommandParser;
 use MUGS::Server::Game::Adventure;
 
+use MUGS::Client::Genre::TurnBased;
+
 use MUGS::Client::Genre::Guessing;
 use MUGS::Client::Game::NumberGuess;
 use MUGS::Client::Game::Snowman;

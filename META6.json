@@ -19,6 +19,7 @@
     "MUGS::Client::Game::Snowman": "lib/MUGS/Client/Game/Snowman.rakumod",
     "MUGS::Client::Genre::Guessing": "lib/MUGS/Client/Genre/Guessing.rakumod",
     "MUGS::Client::Genre::IF": "lib/MUGS/Client/Genre/IF.rakumod",
+    "MUGS::Client::Genre::TurnBased": "lib/MUGS/Client/Genre/TurnBased.rakumod",
     "MUGS::Games": "lib/MUGS/Games.rakumod",
     "MUGS::Server::Game::Adventure": "lib/MUGS/Server/Game/Adventure.rakumod",
     "MUGS::Server::Game::Adventure::CommandParser": "lib/MUGS/Server/Game/Adventure/CommandParser.rakumod",

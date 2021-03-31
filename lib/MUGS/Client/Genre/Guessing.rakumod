@@ -1,11 +1,11 @@
 # ABSTRACT: General client for simple guessing games
 
 use MUGS::Core;
-use MUGS::Client;
+use MUGS::Client::Genre::TurnBased;
 
 
 #| Client side of guessing game
-class MUGS::Client::Genre::Guessing is MUGS::Client::Game {
+class MUGS::Client::Genre::Guessing is MUGS::Client::Genre::TurnBased {
     method valid-guess($guess)     { False }
     method canonical-guess($guess) { $guess }
     method initial-state-format()  { ... }
