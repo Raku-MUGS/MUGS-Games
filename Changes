@@ -1,6 +1,11 @@
 Revision history for MUGS-Games
 
 
+0.1.1  *WIP*
+  [Genres]
+  - Add Client-side TurnBased genre, and use it for IF and Guessing genres
+
+
 0.1.0  2021-03-21
   [Packaging]
   - Update versioned dependencies
