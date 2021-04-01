@@ -6,4 +6,6 @@ use MUGS::Client;
 
 #| Client side of turn-based games
 class MUGS::Client::Genre::TurnBased is MUGS::Client::Game {
+    method valid-turn($turn)                { ... }
+    method submit-turn($turn, &on-success?) { ... }
 }

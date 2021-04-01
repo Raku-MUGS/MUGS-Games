@@ -11,6 +11,9 @@ class MUGS::Client::Genre::Guessing is MUGS::Client::Genre::TurnBased {
     method initial-state-format()  { ... }
     method response-format()       { ... }
 
+    method valid-turn($turn)                { self.valid-guess($turn) }
+    method submit-turn($turn, &on-success?) { self.send-guess($turn, &on-success) }
+
     method send-guess($guess, &on-success) {
         self.action-promise(self.guess-action($guess), &on-success).then: {
             if .status == Kept {
