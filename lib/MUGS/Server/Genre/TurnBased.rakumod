@@ -22,6 +22,10 @@ class MUGS::Server::Genre::TurnBased is MUGS::Server::Game {
         @!play-order = @!play-order.grep(* !=== $character);
     }
 
+    method next-character(::?CLASS:D:) {
+        @.play-order.push(@.play-order.shift) if @.play-order > 1;
+    }
+
     method ensure-action-valid(::?CLASS:D: MUGS::Character:D :$character!, :$action!) {
         callsame;
 
@@ -29,6 +33,11 @@ class MUGS::Server::Genre::TurnBased is MUGS::Server::Game {
             my $next = @.play-order[0];
             die "Not your turn; $next.screen-name() is next" unless $next === $character;
         }
+    }
+
+    method post-process-action(::?CLASS:D: MUGS::Character:D :$character!,
+                               :$action!, :$result!) {
+        self.next-character;
     }
 
     method game-status(::?CLASS:D: $action-result) {
