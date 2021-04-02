@@ -6,6 +6,7 @@ Revision history for MUGS-Games
   - Implement Tic-Tac-Toe as a simple configuration of MNKGame genre
 
   [Genres]
+  - After a valid turn, TurnBased play moves to next character
   - Add Client-side TurnBased genre, and use it for IF and Guessing genres
   - Client-side genres now handle valid-turn and submit-turn methods
   - Simplify Guessing genre send-guess method; complexity belonged in UI
