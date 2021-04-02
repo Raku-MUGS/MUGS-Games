@@ -16,6 +16,15 @@ class MUGS::Server::Genre::MNKGame is MUGS::Server::Genre::RectangularBoard {
     method genre-tags() { (|callsame, 'mnk-game') }
     method default-k()  { min(self.width, self.height) }
 
+    method config-form() {
+        my $form = callsame;
+        self.change-config-default(:$form, :field('min-players'),   :default(2));
+        self.change-config-default(:$form, :field('max-players'),   :default(2));
+        self.change-config-default(:$form, :field('start-players'), :default(2));
+        self.change-config-default(:$form, :field('allow-joins-after-start'), :default(False));
+        $form
+    }
+
     # Set the starting board contents to empty in all cells
     method setup-starting-layout() {
         for @($.board<contents>) -> @row {
