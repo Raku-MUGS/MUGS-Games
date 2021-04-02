@@ -7,7 +7,6 @@ use MUGS::Client::Genre::BoardGame;
 #| Client side of M,N,K games
 class MUGS::Client::Genre::MNKGame is MUGS::Client::Genre::BoardGame {
     method valid-turn($turn) {
-        # XXXX: Validate
-        True
+        $turn && $turn ~~ /^ [<[a..z]> | \d+ ','] \d+ $/;
     }
 }
