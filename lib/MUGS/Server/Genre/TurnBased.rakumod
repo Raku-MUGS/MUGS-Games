@@ -29,7 +29,7 @@ class MUGS::Server::Genre::TurnBased is MUGS::Server::Game {
     method ensure-action-valid(::?CLASS:D: MUGS::Character:D :$character!, :$action!) {
         callsame;
 
-        if @.play-order {
+        if @.play-order && $action<type> ne 'nop' {
             my $next = @.play-order[0];
             die "Not your turn; $next.screen-name() is next" unless $next === $character;
         }
