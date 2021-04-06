@@ -87,6 +87,6 @@ class MUGS::Server::Genre::BoardGame is MUGS::Server::Genre::TurnBased {
     }
 
     method invalid-move($move, Str:D $reason) {
-        X::MUGS::BoardGame::Move::Invalid.new($move, $reason).throw;
+        X::MUGS::BoardGame::Move::Invalid.new(:$move, :$reason).throw;
     }
 }
