@@ -37,7 +37,15 @@ class MUGS::Server::Genre::TurnBased is MUGS::Server::Game {
 
     method post-process-action(::?CLASS:D: MUGS::Character:D :$character!,
                                :$action!, :$result!) {
-        self.next-character;
+        if $action<type> ne 'nop' {
+            self.next-character;
+
+            my %update := self.game-status( () );
+            for self.participants -> (:character($c), :$session, :$instance) {
+                next if $c === $character;
+                $session.push-game-update(:game-id($.id), :character($c), :%update);
+            }
+        }
     }
 
     method game-status(::?CLASS:D: $action-result) {
