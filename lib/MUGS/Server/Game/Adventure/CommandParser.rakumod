@@ -10,7 +10,7 @@ my %long = %abbr.invert;
 
 #| Context for parsing (room exits, visible items, etc.)
 class MUGS::Server::Game::Adventure::CommandParser::Context {
-    # These should be compiled from a combination of player state (such as
+    # These should be compiled from a combination of character state (such as
     # inventory) and location information (such as exits and visible items)
     has @.items;
     has @.exits;
