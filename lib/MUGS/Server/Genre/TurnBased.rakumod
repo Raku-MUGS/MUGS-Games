@@ -6,15 +6,25 @@ use MUGS::Server;
 
 #| Server side of turn-based games
 class MUGS::Server::Genre::TurnBased is MUGS::Server::Game {
-    has UInt:D            $.turns      is rw = 0;
+    has UInt:D            $.turns          is rw = 0;
     has MUGS::Character:D @.play-order;
+    has MUGS::Character:D @.initial-order;
 
     method genre-tags() { (|callsame, 'turn-based') }
 
+    method start-game(::?CLASS:D:) {
+        self.choose-initial-play-order;
+        callsame;
+    }
+
+    method choose-initial-play-order(::?CLASS:D:) {
+        @!initial-order = @!play-order .= pick(*);
+    }
+
     method add-character(::?CLASS:D: MUGS::Character:D :$character!,
                          MUGS::Server::Session:D :$session!) {
-        callsame;
         @!play-order.push($character);
+        callsame;
     }
 
     method remove-character(::?CLASS:D: MUGS::Character:D $character) {
@@ -49,9 +59,11 @@ class MUGS::Server::Genre::TurnBased is MUGS::Server::Game {
     }
 
     method game-status(::?CLASS:D: $action-result) {
-        my $next           = @.play-order[0];
-        my $next-character = $next ?? $next.screen-name !! '';
+        my @play-order     = @.play-order\  .map(*.screen-name);
+        my @initial-order  = @.initial-order.map(*.screen-name);
+        my $next-character = @play-order[0] || '';
 
-        hash(|callsame, :$!turns, :$next-character)
+        hash(|callsame, :$!turns, :$next-character,
+             :@play-order, :@initial-order)
     }
 }
