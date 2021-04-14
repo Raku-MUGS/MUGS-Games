@@ -44,12 +44,13 @@ class MUGS::Server::Genre::MNKGame is MUGS::Server::Genre::RectangularBoard {
         self.set-cell($col, $row, $character.screen-name);
 
         if self.is-win-at($col, $row) {
-            # XXXX: Win for current character, loss for others
-            self.set-winloss(Win);
+            self.set-winloss(Win,  $character);
+            self.set-winloss(Loss, $_) for @.play-order.tail;
+            self.set-gamestate(Finished);
         }
         elsif self.board-full {
-            # XXXX: Draw for all characters
-            self.set-winloss(Tie);
+            self.set-winloss(Tie,  $_) for @.play-order;
+            self.set-gamestate(Finished);
         }
 
         ()

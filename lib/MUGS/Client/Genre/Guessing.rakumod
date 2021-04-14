@@ -24,7 +24,6 @@ class MUGS::Client::Genre::Guessing is MUGS::Client::Genre::TurnBased {
 
     method ensure-initial-state-valid() {
         my $base-format = :(UInt:D :$turns!,
-                            :$winloss!   where { WinLoss::{$_}.defined },
                             :$gamestate! where { GameState::{$_}.defined }, *%);
 
         die "Invalid base initial state format; $.initial-state.raku() !~~ $base-format.raku()"
@@ -35,7 +34,6 @@ class MUGS::Client::Genre::Guessing is MUGS::Client::Genre::TurnBased {
 
     method ensure-response-valid($response) {
         my $base-format = :(UInt:D :$turns!,
-                            :$winloss!   where { WinLoss::{$_}.defined },
                             :$gamestate! where { GameState::{$_}.defined }, *%);
 
         die "Invalid base response format; $response.data.raku() !~~ $base-format.raku()"
