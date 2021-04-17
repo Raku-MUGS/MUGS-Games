@@ -16,6 +16,7 @@
   "provides": {
     "MUGS::Client::Game::Adventure": "lib/MUGS/Client/Game/Adventure.rakumod",
     "MUGS::Client::Game::NumberGuess": "lib/MUGS/Client/Game/NumberGuess.rakumod",
+    "MUGS::Client::Game::PFX": "lib/MUGS/Client/Game/PFX.rakumod",
     "MUGS::Client::Game::Snowman": "lib/MUGS/Client/Game/Snowman.rakumod",
     "MUGS::Client::Game::TicTacToe": "lib/MUGS/Client/Game/TicTacToe.rakumod",
     "MUGS::Client::Genre::BoardGame": "lib/MUGS/Client/Genre/BoardGame.rakumod",
@@ -29,6 +30,7 @@
     "MUGS::Server::Game::Adventure::Loader": "lib/MUGS/Server/Game/Adventure/Loader.rakumod",
     "MUGS::Server::Game::Adventure::Locations": "lib/MUGS/Server/Game/Adventure/Locations.rakumod",
     "MUGS::Server::Game::NumberGuess": "lib/MUGS/Server/Game/NumberGuess.rakumod",
+    "MUGS::Server::Game::PFX": "lib/MUGS/Server/Game/PFX.rakumod",
     "MUGS::Server::Game::Snowman": "lib/MUGS/Server/Game/Snowman.rakumod",
     "MUGS::Server::Game::TicTacToe": "lib/MUGS/Server/Game/TicTacToe.rakumod",
     "MUGS::Server::Genre::BoardGame": "lib/MUGS/Server/Genre/BoardGame.rakumod",
