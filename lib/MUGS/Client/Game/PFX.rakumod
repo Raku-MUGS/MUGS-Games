@@ -8,7 +8,7 @@ use MUGS::Client::Genre::Test;
 class MUGS::Client::Game::PFX is MUGS::Client::Genre::Test {
     method game-type() { 'pfx' }
 
-    method send-pause-request($message, &on-success?) {
+    method send-pause-request(&on-success?) {
         self.action-promise: hash(:type<pause>), &on-success;
     }
 }

@@ -41,7 +41,7 @@ use MUGS::Client::Game::TicTacToe;
 use MUGS::Client::Genre::IF;
 use MUGS::Client::Game::Adventure;
 
-use MUGS::Server::Game::PFX;
+use MUGS::Client::Game::PFX;
 
 
 pass "all modules loaded successfully";
