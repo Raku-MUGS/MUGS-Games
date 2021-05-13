@@ -45,8 +45,8 @@ role MUGS::Server::Genre::CardGame::Standard52CardDeck {
             for < A 2 3 4 5 6 7 8 9 10 J Q K >.kv -> $j, $rank {
                 my $unicode = chr(0x1F0A1 + 16 * $i + $j + ?($rank eq 'Q'|'K'));
                 @.unshuffled-deck.push:
-                    StandardPlayingCard.new(:$rank, :$suit, :$unicode,
-                                            :numeric-rank($j+1));
+                    MUGS::StandardPlayingCard.new(:$rank, :$suit, :$unicode,
+                                                  :numeric-rank($j+1));
             }
         }
     }
