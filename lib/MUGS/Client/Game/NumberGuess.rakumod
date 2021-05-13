@@ -10,11 +10,12 @@ class MUGS::Client::Game::NumberGuess is MUGS::Client::Genre::Guessing {
     method valid-guess($guess)     { $guess ~~ /^ \d+ $/ }
     method canonical-guess($guess) { +$guess }
     method initial-state-format()  { :(UInt:D :$min!, UInt:D :$max!, *%) }
-    method response-format()       { :(:$result where { !.defined || Order::{$_}.defined }, *%) }
+    method response-format()       { :(:$result where { !.defined || Order($_).defined }, *%) }
 
     method canonify-response($response) {
         callsame;
-        $response.data<result> &&= Order::{$response.data<result>};
+        $response.data<result> = Order($response.data<result>)
+            if $response.data<result>.defined;
     }
 }
 
