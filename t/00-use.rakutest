@@ -20,6 +20,8 @@ use MUGS::Server::Genre::RectangularBoard;
 use MUGS::Server::Genre::MNKGame;
 use MUGS::Server::Game::TicTacToe;
 
+use MUGS::Server::Genre::CardGame;
+
 use MUGS::Server::Genre::IF;
 use MUGS::Server::Game::Adventure::Locations;
 use MUGS::Server::Game::Adventure::Loader;
@@ -37,6 +39,8 @@ use MUGS::Client::Game::Snowman;
 use MUGS::Client::Genre::BoardGame;
 use MUGS::Client::Genre::MNKGame;
 use MUGS::Client::Game::TicTacToe;
+
+use MUGS::Client::Genre::CardGame;
 
 use MUGS::Client::Genre::IF;
 use MUGS::Client::Game::Adventure;
