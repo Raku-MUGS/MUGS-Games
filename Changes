@@ -1,6 +1,18 @@
 Revision history for MUGS-Games
 
 
+0.1.2  *WIP*
+  [CBOR transition]
+  - Remove or fix several places where JSON stringification was assumed
+
+  [Games]
+  - Start implementing PFX game, testing performance of server-managed particle
+    effects (finally possible with the JSON -> CBOR serialization transition)
+
+  [Genres]
+  - Stub in the beginnings of the CardGame genre
+
+
 0.1.1  2021-04-15
   [Games]
   - Implement Tic-Tac-Toe as a simple configuration of MNKGame genre
