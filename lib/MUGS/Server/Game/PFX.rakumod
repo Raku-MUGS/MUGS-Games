@@ -169,14 +169,14 @@ class MUGS::Server::Game::PFX is MUGS::Server::Genre::Test {
             MUGS::Server::LogTimelineSchema::GameStateUpdate.log: :$.game-type, :$.id, {
                 self.update-time;
                 if $.dt -> $delta-time {
-                    my $t0 = now;
+                    # my $t0 = now;
                     .update-effect(:$.game-time, :$delta-time) for @!effects;
-                    printf "Update time: %6.3fms\n", (now - $t0) * 1000;
+                    # printf "Update time: %6.3fms\n", (now - $t0) * 1000;
                 }
 
-                my $t0 = now;
-                VM.request-garbage-collection;
-                printf "GC time:     %6.3fms\n", (now - $t0) * 1000;
+                # my $t0 = now;
+                # VM.request-garbage-collection;
+                # printf "GC time:     %6.3fms\n", (now - $t0) * 1000;
 
                 my %update := self.state-info;
                 for self.participants -> (:$character, :$session, :$instance) {
