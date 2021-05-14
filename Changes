@@ -1,7 +1,7 @@
 Revision history for MUGS-Games
 
 
-0.1.2  *WIP*
+0.1.2  2021-05-13
   [CBOR transition]
   - Remove or fix several places where JSON stringification was assumed
 
