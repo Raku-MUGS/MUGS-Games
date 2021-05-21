@@ -7,6 +7,7 @@ use MUGS::Server::LogTimelineSchema;
 
 role ParticleEffect {
     has Num() $.start-game-time;
+    has $.id = NEXT-ID;
     has @.particles;
 
     method remove-particles(  num $et, num $dt) { ... }
@@ -121,7 +122,8 @@ my class ParticleFountain does ParticleEffect {
     }
 
     method state-info() {
-        hash(:type($?CLASS.^name), :particles($.num-storage.particle-storage))
+        hash(:type($?CLASS.^name), :$.id,
+             :particles($.num-storage.particle-storage))
     }
 }
 
