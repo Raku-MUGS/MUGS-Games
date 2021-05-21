@@ -130,6 +130,7 @@ my class ParticleFountain does ParticleEffect {
 
 #| Server side of PFX tech test "game"
 class MUGS::Server::Game::PFX is MUGS::Server::Genre::Test {
+    has $.update-interval = .1;
     has $.dt;
     has @.effects;
 
@@ -165,7 +166,7 @@ class MUGS::Server::Game::PFX is MUGS::Server::Genre::Test {
 
         @!effects.push: ParticleFountain.new(:start-game-time($.game-time));
 
-        start react whenever Supply.interval(.1) {
+        start react whenever Supply.interval($.update-interval) {
             done if $.gamestate >= Finished;
 
             MUGS::Server::LogTimelineSchema::GameStateUpdate.log: :$.game-type, :$.id, {
