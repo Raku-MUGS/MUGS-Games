@@ -11,6 +11,10 @@ Revision history for MUGS-Games
     - Make update-interval an attribute of PFX server
     - Add validate-and-save-update to PFX client
 
+  [Testing]
+  - Run GitHub test workflow against MUGS-Core HEAD rather than previous release
+
+
 0.1.2  2021-05-13
   [CBOR transition]
   - Remove or fix several places where JSON stringification was assumed
