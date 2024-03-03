@@ -2,6 +2,8 @@ Revision history for MUGS-Games
 
 
 {{$NEXT}}
+
+0.1.4  2024-03-02T19:03:28-08:00
   [Packaging]
   - Bump MUGS::Core dependency to 0.1.4
   - Update copyright years in README

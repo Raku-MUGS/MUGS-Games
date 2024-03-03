@@ -1,6 +1,6 @@
 # ABSTRACT: Free-as-in-speech game implementations for MUGS
 
-unit class MUGS::Games:auth<zef:japhb>:ver<0.1.3>;
+unit class MUGS::Games:auth<zef:japhb>:ver<0.1.4>;
 
 
 =begin pod
