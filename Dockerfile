@@ -4,14 +4,11 @@ ARG mugs_version
 
 LABEL org.opencontainers.image.source=https://github.com/Raku-MUGS/MUGS-Games
 
-USER root:root
+USER raku:raku
 
-COPY . /home/raku
+WORKDIR /home/raku/MUGS/MUGS-Games
+COPY . .
 
 RUN zef install --deps-only . \
- && raku -c -Ilib bin/mugs-ws-server \
- && raku -c -Ilib bin/mugs-admin
-
-RUN zef install . --/test
-
-USER raku:raku
+ && zef install --/test . \
+ && rm -rf /home/raku/.zef /tmp/.zef
